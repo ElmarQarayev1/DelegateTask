@@ -110,7 +110,7 @@ class Program
         string opt;
         do
         {
-            Console.WriteLine("1.Exam elave et\n2.Exam Sil\n3.Examlar siyahisina bax\n4.Exam axtar\n0.Programdan cix");
+            Console.WriteLine("1.Exam elave et\n2.Exam Sil\n3.Examlar siyahisina bax\n4.Exam axtar\n5.A ile baslayanlara bax\n6.Kecmis imtahanlara bax\n7.1 aydan az qalanlara bax\n8.saat 8 de olan imtahanlara bax\n9.kecmis tarixli imtahanlari sil\n0.Programdan cix");
             Console.WriteLine("secim edin:");
              opt = Console.ReadLine();
             switch (opt)
@@ -126,6 +126,21 @@ class Program
                     break;
                 case "4":
                     SearchExam(examT);
+                    break;
+                case "5":
+                    StartA(examT);
+                    break;
+                case "6":
+                    LastDate(examT);
+                    break;
+                case "7":
+                    OneMonthDate(examT);
+                    break;
+                case "8":
+                    EightDate(examT);
+                    break;
+                case "9":
+                    LastDateRemove(examT);
                     break;
                 case "0":
                     Console.WriteLine("Programdan cixildi!");
@@ -218,5 +233,53 @@ class Program
             Console.WriteLine(item);
         }
     }
+    static void StartA(List<Exam> examT)
+    {
+        Console.WriteLine("A ile baslayanlar:");
+        var t1 = examT.FindAll(exam => exam.Subject.StartsWith("A"));
+        foreach (var item in t1)
+        {
+            Console.WriteLine(item);
+        }
+    }
+    static void LastDate(List<Exam> examT)
+    {
+        Console.WriteLine("kecmis tarixler:");
+        var t2 = examT.FindAll(exam => exam.Date.Date < DateTime.Now.Date);
+        foreach (var item in t2)
+        {
+            Console.WriteLine(item);
+        }
+
+    }
+    static void OneMonthDate(List<Exam> examT)
+    {
+        Console.WriteLine("bir aydan az vaxtda bas tutacaq examlar:");
+        var t3 = examT.FindAll(exam => (exam.Date.Date - DateTime.Now.Date).TotalDays < 30 && (exam.Date.Date - DateTime.Now.Date).TotalDays >= 0);
+        foreach (var item in t3)
+        {
+            Console.WriteLine(item);
+        }
+
+    }
+    static void EightDate(List<Exam> examT)
+    {
+        Console.WriteLine("saat 8 de bas tutacaq examlar:");
+
+        var t4 = examT.FindAll(exam => exam.Date.Hour == 8 && exam.Date.Minute == 0);
+        foreach (var item in t4)
+        {
+            Console.WriteLine(item);
+        }
+
+    }
+    static void LastDateRemove(List<Exam> examT)
+    {
+        Console.WriteLine("kecmis tarixli imtahanlar silindi!");
+        examT.RemoveAll(exam => exam.Date.Date < DateTime.Now.Date);
+
+    }
+
+
 }
 

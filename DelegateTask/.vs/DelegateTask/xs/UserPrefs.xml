@@ -1,26 +1,26 @@
 ﻿<Properties StartupConfiguration="{E0D9D0C5-6374-4E41-9A03-C83778BA67C0}|Default">
-  <MultiItemStartupConfigurations />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
-  <MonoDevelop.Ide.Workbench ActiveDocument="DelegateTask/Exam.cs">
+  <MultiItemStartupConfigurations />
+  <MonoDevelop.Ide.Workbench ActiveDocument="DelegateTask/Program.cs">
     <Files>
-      <File FileName="DelegateTask/Program.cs" Line="24" Column="32" />
+      <File FileName="DelegateTask/Program.cs" Line="110" Column="20" />
       <File FileName="DelegateTask/Exam.cs" Line="16" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
-          <Node name="DelegateTask" expanded="True">
+          <Node name="DelegateTask">
             <Node name="DelegateTask">
-              <Node name="Exam.cs" selected="True" />
+              <Node name="Program.cs" selected="True" />
             </Node>
           </Node>
         </State>
       </Pad>
     </Pads>
   </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.ItemProperties.DelegateTask PreferredExecutionTarget="MonoDevelop.Default" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
-  <MonoDevelop.Ide.ItemProperties.DelegateTask PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
 </Properties>
